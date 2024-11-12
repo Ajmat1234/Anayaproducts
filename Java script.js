@@ -17,3 +17,8 @@ function sortProducts() {
     productGallery.innerHTML = "";
     products.forEach(product => productGallery.appendChild(product));
 }
+
+// Page load hone par default sorting ko 'Date Added' par set karein
+document.addEventListener("DOMContentLoaded", () => {
+    sortProducts();
+});
