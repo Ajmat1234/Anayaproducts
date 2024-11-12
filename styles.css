@@ -43,7 +43,7 @@ header h1 {
     .product-gallery {
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row-reverse; /* Reverse order for mobile */
+        flex-direction: column-reverse; /* Column reverse for mobile */
         gap: 10px;
     }
 
