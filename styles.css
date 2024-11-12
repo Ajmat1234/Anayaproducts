@@ -24,10 +24,8 @@ header {
 
 .product-gallery {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    flex-direction: column-reverse;  /* Yeh line add karein */
+    gap: 20px; /* Products ke beech space dene ke liye */
 }
 
 .product-item {
