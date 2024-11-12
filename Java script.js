@@ -1,4 +1,5 @@
 function sortProducts() {
+    console.log("Sorting triggered"); // Debugging: Check if function is called
     const sortOption = document.getElementById("sort-options").value;
     const gallery = document.getElementById("product-gallery");
     const products = Array.from(gallery.getElementsByClassName("product-item"));
@@ -18,13 +19,14 @@ function sortProducts() {
 
     // Clear existing product items
     gallery.innerHTML = "";
-    
+
     // Re-add sorted product items
     products.forEach(product => gallery.appendChild(product));
 }
 
 // Default sorting by date on page load
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("Page loaded"); // Debugging: Check if page load triggers function
     document.getElementById("sort-options").value = "date";
     sortProducts();
 });
