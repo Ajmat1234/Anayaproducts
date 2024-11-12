@@ -26,6 +26,8 @@ header h1 {
     gap: 20px;
     background-color: #1e1e1e;
     padding: 20px;
+    grid-auto-flow: dense; /* Grid items ko reverse mein arrange karne ke liye */
+    direction: rtl; /* Right-to-left direction for reverse order */
 }
 
 .product-item {
@@ -36,14 +38,13 @@ header h1 {
     text-align: center;
     width: 100%;
     box-sizing: border-box;
+    direction: ltr; /* Content ko left-to-right dikhane ke liye */
 }
 
-/* Mobile view mein reverse aur ek line mein 2 products */
+/* Mobile view mein bhi reverse aur ek line mein 2 products */
 @media (max-width: 768px) {
     .product-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column-reverse; /* Column reverse for mobile */
+        grid-template-columns: repeat(2, 1fr); /* Mobile view mein bhi 2 products per row */
         gap: 10px;
     }
 
