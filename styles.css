@@ -22,7 +22,7 @@ header h1 {
 
 .product-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 products per row */
+    grid-template-columns: repeat(2, 1fr); /* Desktop view mein 2 products per row */
     gap: 20px;
     background-color: #1e1e1e;
     padding: 20px;
@@ -36,7 +36,22 @@ header h1 {
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    direction: ltr;
+}
+
+/* Mobile view mein reverse aur ek line mein 2 products */
+@media (max-width: 768px) {
+    .product-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse; /* Reverse order for mobile */
+        gap: 10px;
+    }
+
+    .product-item {
+        flex: 0 0 calc(50% - 10px); /* Ek line mein 2 items, with margin gap */
+        max-width: calc(50% - 10px);
+        box-sizing: border-box;
+    }
 }
 
 .product-item img {
@@ -69,18 +84,4 @@ footer {
     color: #cccccc;
     background-color: #292929;
     padding: 10px;
-}
-
-/* Mobile view styling for reverse order and 2 items per line */
-@media (max-width: 768px) {
-    .product-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column-reverse; /* Reverse order for mobile */
-    }
-
-    .product-item {
-        width: calc(50% - 20px); /* 2 items per line */
-        margin: 10px;
-    }
 }
