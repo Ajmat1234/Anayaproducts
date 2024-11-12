@@ -63,9 +63,9 @@ header h1 {
 }
 /* CSS code */
 .product-item img {
-    width: 1080px;
-    height: 2221px;
-    object-fit: cover; /* Image ko properly fit karega */
+    width: 100%;  /* Image ka width container ke width ke barabar hoga */
+    height: 100%; /* Image ka height container ke height ke barabar hoga */
+    object-fit: cover; /* Image ko container mein cover karne ka tareeka */
 }
 
 .product-item h2 {
