@@ -1,32 +1,19 @@
 function sortProducts() {
-    console.log("Sorting triggered"); // Debugging: Check if function is called
     const sortOption = document.getElementById("sort-options").value;
-    const gallery = document.getElementById("product-gallery");
-    const products = Array.from(gallery.getElementsByClassName("product-item"));
+    const productGallery = document.getElementById("product-gallery");
+    const products = Array.from(productGallery.getElementsByClassName("product-item"));
 
     products.sort((a, b) => {
         if (sortOption === "name") {
-            // Sort by name (alphabetical order)
-            return a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
+            return a.dataset.name.localeCompare(b.dataset.name);
         } else if (sortOption === "date") {
-            // Sort by date (most recent first)
-            return new Date(b.getAttribute("data-date")) - new Date(a.getAttribute("data-date"));
+            return new Date(b.dataset.date) - new Date(a.dataset.date);
         } else if (sortOption === "popular") {
-            // Sort by popularity (highest first)
-            return b.getAttribute("data-popularity") - a.getAttribute("data-popularity");
+            return b.dataset.popularity - a.dataset.popularity;
         }
     });
 
-    // Clear existing product items
-    gallery.innerHTML = "";
-
-    // Re-add sorted product items
-    products.forEach(product => gallery.appendChild(product));
+    // Gallery ko clean aur sorted products ko dubara add karein
+    productGallery.innerHTML = "";
+    products.forEach(product => productGallery.appendChild(product));
 }
-
-// Default sorting by date on page load
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Page loaded"); // Debugging: Check if page load triggers function
-    document.getElementById("sort-options").value = "date";
-    sortProducts();
-});
