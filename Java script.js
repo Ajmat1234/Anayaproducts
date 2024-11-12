@@ -1,23 +1,30 @@
 function sortProducts() {
     const sortOption = document.getElementById("sort-options").value;
-    const productGallery = document.getElementById("product-gallery");
-    const products = Array.from(productGallery.getElementsByClassName("product-item"));
+    const gallery = document.getElementById("product-gallery");
+    const products = Array.from(gallery.getElementsByClassName("product-item"));
 
     products.sort((a, b) => {
         if (sortOption === "name") {
+            // Sort by name (alphabetical order)
             return a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
         } else if (sortOption === "date") {
+            // Sort by date (most recent first)
             return new Date(b.getAttribute("data-date")) - new Date(a.getAttribute("data-date"));
         } else if (sortOption === "popular") {
+            // Sort by popularity (highest first)
             return b.getAttribute("data-popularity") - a.getAttribute("data-popularity");
         }
     });
 
-    // Sorted products ko product gallery mein add karein
-    products.forEach(product => productGallery.appendChild(product));
+    // Clear existing product items
+    gallery.innerHTML = "";
+    
+    // Re-add sorted product items
+    products.forEach(product => gallery.appendChild(product));
 }
 
-// Page load hone par default sort by date lagane ke liye
+// Default sorting by date on page load
 document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("sort-options").value = "date";
     sortProducts();
 });
