@@ -9,10 +9,11 @@ header {
     color: #f5f5f5;
     text-align: center;
     padding: 20px;
+    border-radius: 5px; /* Optional: Adds a rounded corner effect */
 }
 
 header h1 {
-    font-weight: bold; /* Bold header text */
+    font-weight: bold;
 }
 
 .description {
