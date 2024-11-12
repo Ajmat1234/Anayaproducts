@@ -26,7 +26,6 @@ header h1 {
     gap: 20px;
     background-color: #1e1e1e;
     padding: 20px;
-    direction: rtl; /* Row-reverse effect */
 }
 
 .product-item {
@@ -37,7 +36,7 @@ header h1 {
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    direction: ltr; /* Ensures text inside product items are left-to-right */
+    direction: ltr;
 }
 
 .product-item img {
@@ -65,15 +64,23 @@ header h1 {
     background-color: #ff4b4b;
 }
 
-@media (max-width: 768px) {
-    .product-gallery {
-        grid-template-columns: 1fr; /* 1 product per row on mobile */
-    }
-}
-
 footer {
     text-align: center;
     color: #cccccc;
     background-color: #292929;
     padding: 10px;
+}
+
+/* Mobile view styling for reverse order and 2 items per line */
+@media (max-width: 768px) {
+    .product-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse; /* Reverse order for mobile */
+    }
+
+    .product-item {
+        width: calc(50% - 20px); /* 2 items per line */
+        margin: 10px;
+    }
 }
