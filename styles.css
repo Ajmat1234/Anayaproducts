@@ -9,7 +9,7 @@ header {
     color: #f5f5f5;
     text-align: center;
     padding: 20px;
-    border-radius: 5px; /* Optional: Adds a rounded corner effect */
+    border-radius: 5px;
 }
 
 header h1 {
@@ -26,6 +26,7 @@ header h1 {
     gap: 20px;
     background-color: #1e1e1e;
     padding: 20px;
+    direction: rtl; /* Row-reverse effect */
 }
 
 .product-item {
@@ -36,12 +37,8 @@ header h1 {
     text-align: center;
     width: 100%;
     box-sizing: border-box;
+    direction: ltr; /* Ensures text inside product items are left-to-right */
 }
-
-@media (max-width: 768px) {
-    .product-gallery {
-        grid-template-columns: 1fr; /* 1 product per row on mobile */
-    }
 
 .product-item img {
     width: 100%;
@@ -66,6 +63,12 @@ header h1 {
 
 .order-btn:hover {
     background-color: #ff4b4b;
+}
+
+@media (max-width: 768px) {
+    .product-gallery {
+        grid-template-columns: 1fr; /* 1 product per row on mobile */
+    }
 }
 
 footer {
