@@ -61,9 +61,11 @@ header h1 {
         direction: ltr; /* Content ko left-to-right dikhane ke liye */
     }
 }
+/* CSS code */
 .product-item img {
-    width: 100%;
-    height: auto;
+    width: 1080px;
+    height: 2221px;
+    object-fit: cover; /* Image ko properly fit karega */
 }
 
 .product-item h2 {
