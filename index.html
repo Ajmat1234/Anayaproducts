@@ -6,7 +6,101 @@
     <meta name="description" content="Anaya Products Store - Discover the best products and order easily online.">
     <meta name="keywords" content="products, online shopping, order now, electronics, fashion">
     <title>Product Showcase</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Body Styling */
+        body {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, #2b1e3f, #423755, #5a506a, #71697f, #898295, #a19baa, #b8b4bf);
+            color: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        header h1 {
+            font-weight: bold;
+        }
+        .description {
+            color: #cccccc;
+            font-size: 1em;
+        }
+
+        /* Product Gallery Styling */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Desktop view mein 2 products per row */
+            gap: 20px;
+            background-color: #1e1e1e;
+            padding: 20px;
+            direction: rtl; /* Right-to-left direction for reverse order */
+        }
+
+        /* Product Item Styling */
+        .product-item {
+            background-color: #333333;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            direction: ltr; /* Content ko left-to-right dikhane ke liye */
+        }
+        .product-item img {
+            width: 100%;
+            max-width: 250px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .product-item h2 {
+            color: #f5f5f5;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        /* Order Button Styling */
+        .order-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #ffffff;
+            background-color: #ff6b6b;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .order-btn:hover {
+            background-color: #ff4b4b;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            color: #cccccc;
+            background-color: #292929;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+
+        /* Mobile View Styling */
+        @media (max-width: 768px) {
+            .product-gallery {
+                grid-template-columns: repeat(2, 1fr); /* Ek line mein 2 items */
+                gap: 10px;
+            }
+            .product-item {
+                direction: ltr; /* Content ko left-to-right dikhane ke liye */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,15 +111,15 @@
     <!-- Product Gallery -->
     <section id="product-gallery" class="product-gallery">
         <div class="product-item">
-    <img src="https://raw.githubusercontent.com/Ajmat1234/Anayaproducts/refs/heads/main/IMG_20241112_172957_276.jpg" alt="ComicSense.xyz Unisex Tokyo Revengers Anime Jacket for Men and Women, Walhalla Classic Edition Printed Cosplay Anime Bomber Jackets">
-    <h2>ComicSense.xyz Unisex Tokyo Revengers Anime Jacket for Men and Women, Walhalla Classic Edition Printed Cosplay Anime Bomber Jackets</h2>
-    <a href="https://amzn.to/40FDm5V" class="order-btn" target="_blank">Order Now</a>
+            <img src="https://raw.githubusercontent.com/Ajmat1234/Anayaproducts/refs/heads/main/IMG_20241112_172957_276.jpg" alt="ComicSense.xyz Unisex Tokyo Revengers Anime Jacket">
+            <h2>ComicSense.xyz Unisex Tokyo Revengers Anime Jacket for Men and Women, Walhalla Classic Edition Printed Cosplay Anime Bomber Jackets</h2>
+            <a href="https://amzn.to/40FDm5V" class="order-btn" target="_blank">Order Now</a>
         </div>
         
         <div class="product-item">
-    <img src="https://raw.githubusercontent.com/Ajmat1234/Anayaproducts/refs/heads/main/IMG_20241112_022424_488.jpg" alt="Campus Running Walking Jogging Workout Camp-Glacier Shoes for Men">
-    <h2>Campus Running Walking Jogging Workout Camp-Glacier Shoes for Men</h2>
-    <a href="https://amzn.to/48JdPL4" class="order-btn" target="_blank">Order Now</a>
+            <img src="https://raw.githubusercontent.com/Ajmat1234/Anayaproducts/refs/heads/main/IMG_20241112_022424_488.jpg" alt="Campus Running Shoes">
+            <h2>Campus Running Walking Jogging Workout Camp-Glacier Shoes for Men</h2>
+            <a href="https://amzn.to/48JdPL4" class="order-btn" target="_blank">Order Now</a>
         </div>
         
         <div class="product-item">
@@ -48,9 +142,8 @@
     </section>
 
     <footer>
-        <p>© 2024 My Product Store. All rights reserved.</p>
+        <p>© 2024 My Product Store. All rights reserved. | <a href="#" style="color: #ff6b6b;">Privacy Policy</a> | <a href="#" style="color: #ff6b6b;">Terms & Conditions</a></p>
     </footer>
 
-  
 </body>
 </html>
